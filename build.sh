@@ -1,4 +1,3 @@
-build.sh
 #!/bin/bash
 path=~/
 
@@ -8,6 +7,7 @@ MOTO() {
 
     cd cr
     git clone https://github.com/Jamesfstab/private-keys -b Android-14 vendor/lineage-priv
+    git clone https://github.com/Jamesfstab/vendor_extra -b Android-14 vendor/extra
 
     echo -ne '\n' | repo init -u https://github.com/crdroidandroid/android.git -b 14.0 --git-lfs --depth=1
     repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
